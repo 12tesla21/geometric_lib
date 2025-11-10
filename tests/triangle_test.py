@@ -4,7 +4,7 @@ import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '../src'))
 
-from triangle import area, perimeter
+from src.triangle import area, perimeter
 
 
 class TriangleTestCase(unittest.TestCase):

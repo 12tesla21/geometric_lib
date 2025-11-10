@@ -4,7 +4,7 @@ import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '../src'))
 
-from rectangle import area, perimeter
+from src.rectangle import area, perimeter
 
 
 class RectangleTestCase(unittest.TestCase):

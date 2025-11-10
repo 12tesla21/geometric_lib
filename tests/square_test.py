@@ -4,7 +4,7 @@ import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '../src'))
 
-from square import area, perimeter
+from src.square import area, perimeter
 
 
 class SquareTestCase(unittest.TestCase):

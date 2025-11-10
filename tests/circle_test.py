@@ -5,7 +5,7 @@ import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '../src'))
 
-from circle import area, perimeter
+from src.circle import area, perimeter
 
 
 class CircleTestCase(unittest.TestCase):
