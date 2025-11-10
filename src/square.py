@@ -1,4 +1,3 @@
-
 def area(a):
     '''Возвращает площадь квадрата со стороной a.
 
@@ -14,7 +13,13 @@ def area(a):
         >>> area(3.5)
         12.25
     '''
-
+    
+    if isinstance(a, bool):
+        raise TypeError("Сторона должна быть числом, а не булевым значением")
+    if not isinstance(a, (int, float)):
+        raise TypeError("Сторона должна быть числом")
+    if a < 0:
+        raise ValueError("Сторона квадрата не может быть отрицательной")
     return a * a
 
 
@@ -34,4 +39,10 @@ def perimeter(a):
         14.0
     '''
     
+    if isinstance(a, bool):
+        raise TypeError("Сторона должна быть числом, а не булевым значением")
+    if not isinstance(a, (int, float)):
+        raise TypeError("Сторона должна быть числом")
+    if a < 0:
+        raise ValueError("Сторона квадрата не может быть отрицательной")
     return 4 * a
