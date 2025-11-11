@@ -46,6 +46,8 @@ def perimeter(a, b, c):
         raise TypeError("Стороны должны быть числами, а не булевыми значениями")
     if not isinstance(a, (int, float)) or not isinstance(b, (int, float)) or not isinstance(c, (int, float)):
         raise TypeError("Все стороны должны быть числами")
-    if a < 0 or b < 0 or c < 0:
+    if (a < 0 or b < 0 or c < 0):
         raise ValueError("Стороны треугольника не могут быть отрицательными")
+    if (a + b <= c or a + c <= b or b + c <= a):
+        raise ValueError("Сумма любых двух сторон должна быть больше третьей")
     return a + b + c

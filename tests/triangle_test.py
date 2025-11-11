@@ -30,12 +30,6 @@ class TriangleTestCase(unittest.TestCase):
         self.assertAlmostEqual(area(1e-10, 1e-10), 5e-21, places=31)
     
     # ПЕРИМЕТР
-
-    def test_perimeter_zero_sides(self):
-        self.assertEqual(perimeter(0, 0, 0), 0)
-        self.assertEqual(perimeter(5, 0, 0), 5)
-        self.assertEqual(perimeter(0, 5, 0), 5)
-        self.assertEqual(perimeter(0, 0, 5), 5)
     
     def test_perimeter_positive_integers(self):
         self.assertEqual(perimeter(3, 4, 5), 12)
@@ -106,6 +100,14 @@ class TriangleTestCase(unittest.TestCase):
             perimeter(True, 123, "5")
         with self.assertRaises(TypeError):
             perimeter(False, True, True)
+    
+    def test_perimeter_invalid_sides(self):
+        with self.assertRaises(ValueError):
+            perimeter(3, 5, 1)
+        with self.assertRaises(ValueError):
+            perimeter(1, 2, 10)
+        with self.assertRaises(ValueError):
+            perimeter(10, 5, 1)
 
 
 if __name__ == '__main__':
