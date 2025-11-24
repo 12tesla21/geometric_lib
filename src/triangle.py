@@ -15,6 +15,12 @@ def area(a, h):
         3.5
     '''
 
+    if isinstance(a, bool) or isinstance(h, bool):
+        raise TypeError("Основание и высота должны быть числами, а не булевыми значениями")
+    if not isinstance(a, (int, float)) or not isinstance(h, (int, float)):
+        raise TypeError("Основание и высота должны быть числами")
+    if a < 0 or h < 0:
+        raise ValueError("Основание и высота треугольника не могут быть отрицательными")
     return a * h / 2 
 
 
@@ -35,5 +41,13 @@ def perimeter(a, b, c):
         >>> perimeter(2.5, 3.5, 4)
         10.0
     '''
-
-    return a + b + c 
+    
+    if isinstance(a, bool) or isinstance(b, bool) or isinstance(c, bool):
+        raise TypeError("Стороны должны быть числами, а не булевыми значениями")
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)) or not isinstance(c, (int, float)):
+        raise TypeError("Все стороны должны быть числами")
+    if (a < 0 or b < 0 or c < 0):
+        raise ValueError("Стороны треугольника не могут быть отрицательными")
+    if (a + b <= c or a + c <= b or b + c <= a):
+        raise ValueError("Сумма любых двух сторон должна быть больше третьей")
+    return a + b + c

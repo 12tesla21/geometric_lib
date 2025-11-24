@@ -16,7 +16,13 @@ def area(r):
         >>> area(2.5)
         19.634954084936208
     '''
-
+    
+    if isinstance(r, bool):
+        raise TypeError("Радиус должен быть числом, а не булевым значением")
+    if not isinstance(r, (int, float)):
+        raise TypeError("Радиус должен быть числом")
+    if r < 0:
+        raise ValueError("Радиус не может быть отрицательным")
     return math.pi * r * r
 
 
@@ -35,5 +41,11 @@ def perimeter(r):
         >>> perimeter(2.5)
         15.707963267948966
     '''
-
+    
+    if isinstance(r, bool):
+        raise TypeError("Радиус должен быть числом, а не булевым значением")
+    if not isinstance(r, (int, float)):
+        raise TypeError("Радиус должен быть числом")
+    if r < 0:
+        raise ValueError("Радиус не может быть отрицательным")
     return 2 * math.pi * r
