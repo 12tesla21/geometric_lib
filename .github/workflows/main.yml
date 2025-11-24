@@ -22,9 +22,6 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Display Python version
-      run: python -c "import sys; print(f'Python {sys.version}')"
-
-    - name: Run all tests
+    - name: Run tests using unittest discovery
       run: |
-        python tests/tests_runner.py
+        python -m unittest discover -s tests -p "*_test.py" -v
