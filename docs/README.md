@@ -182,6 +182,12 @@ print(result)  # 3.5
 - Файлы были перемещены в папку src
 - Обновлена документация
 
+### Коммит 6: Добавление новых функций
+**Хеш:** `6833afb59396823a1eab6ad9b1205fb670cb35fd`
+- ДОбавлен GitHub Actions workflow 
+- ubuntu-latest, windows-latest
+- Обновлена документация
+
 
 ## Math formulas
 ### Area
